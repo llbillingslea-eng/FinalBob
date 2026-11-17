@@ -3,6 +3,7 @@ extends Node2D
 var map1_scene = preload("res://map_1.tscn")
 var map2_scene = preload("res://map_2.tscn")
 var map3_scene = preload("res://map_3.tscn")
+var map4_scene = preload("res://map_4.tscn")
 var bob_scene = preload("res://bob.tscn")
 
 var bob: CharacterBody2D
@@ -29,7 +30,7 @@ func _process(_delta: float) -> void:
 func spawn_random_map() -> void:
 	next_spawn_y -= MAP_HEIGHT
 	
-	var selected_scene = [map2_scene, map3_scene].pick_random()
+	var selected_scene = [map2_scene, map3_scene,map4_scene].pick_random()
 	var new_map = selected_scene.instantiate()
 	new_map.position = Vector2(0, next_spawn_y)
 	add_child(new_map)

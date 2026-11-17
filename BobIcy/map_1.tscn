@@ -78,7 +78,7 @@ position = Vector2(32, 424)
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1726109537]
 z_index = -1
 offset_left = -16.0
-offset_top = -104.0
-offset_right = 1168.0
+offset_top = 12.0
+offset_right = 1156.0
 offset_bottom = 664.0
 texture = ExtResource("3_1q0j8")
