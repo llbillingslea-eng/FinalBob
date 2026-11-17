@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://db6lof5u0xdf1" path="res://PNG/Platformer/Cartoon_Medieval_Training Arena_Level_Set_Platformer - Ground 11.png" id="2_igs0g"]
 [ext_resource type="Texture2D" uid="uid://cpoj7waftitgk" path="res://PNG/Platformer/Cartoon_Medieval_Training Arena_Level_Set_Platformer - Ground 12.png" id="3_frbht"]
 [ext_resource type="Texture2D" uid="uid://dmt8odqkl2kr8" path="res://background 3/5.png" id="4_igs0g"]
+[ext_resource type="PackedScene" uid="uid://do2jqy4m8264f" path="res://enemies/bandit.tscn" id="5_frbht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8x4h"]
 size = Vector2(64, 64)
@@ -199,3 +200,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14" unique_id=1021569992]
 position = Vector2(-8, 328)
 shape = SubResource("RectangleShape2D_jknfv")
+
+[node name="Bandit" parent="." unique_id=2137390447 instance=ExtResource("5_frbht")]
+position = Vector2(224, 160)

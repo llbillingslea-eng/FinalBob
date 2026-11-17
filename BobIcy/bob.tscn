@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctb8n71p3vtsn"]
 
-[ext_resource type="Script" uid="uid://bnmt8v1i4fl2n" path="res://bob.gd" id="1_nw4tb"]
+[ext_resource type="Script" uid="uid://iykntdwx67tf" path="res://components/hurtbox_component.gd" id="1_3sbwl"]
 [ext_resource type="Texture2D" uid="uid://bab1a2eptcv11" path="res://Idle/0_Reaper_Man_Idle_000.png" id="1_u7kh7"]
 [ext_resource type="Texture2D" uid="uid://ypk7slhlupxr" path="res://Idle/0_Reaper_Man_Idle_001.png" id="2_nw4tb"]
 [ext_resource type="Texture2D" uid="uid://b0fxb87tygkvj" path="res://Idle/0_Reaper_Man_Idle_002.png" id="3_31n5o"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cjc8ie1fegmrx" path="res://Jump Start/0_Reaper_Man_Jump Start_004.png" id="24_7pwto"]
 [ext_resource type="Texture2D" uid="uid://d0sw04hbpru7w" path="res://Jump Loop/0_Reaper_Man_Jump Loop_005.png" id="25_sknr1"]
 [ext_resource type="Texture2D" uid="uid://but4batvrb8g" path="res://Jump Start/0_Reaper_Man_Jump Start_005.png" id="31_ndywh"]
+[ext_resource type="Script" uid="uid://s2jcr1411kwi" path="res://components/hitbox_component.gd" id="32_n3kq6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jknfv"]
 animations = [{
@@ -144,8 +145,14 @@ animations = [{
 radius = 48.0
 height = 96.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tonq"]
+size = Vector2(66, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4mjs"]
+size = Vector2(65, 80)
+
 [node name="Bob" type="CharacterBody2D" unique_id=612941245]
-script = ExtResource("1_nw4tb")
+script = ExtResource("1_3sbwl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=616694441]
 position = Vector2(52.5, 44.5)
@@ -162,3 +169,17 @@ shape = SubResource("CapsuleShape2D_cs4na")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=726193688]
 limit_left = 0
 limit_right = 1152
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1555986965]
+script = ExtResource("32_n3kq6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1856192579]
+position = Vector2(52, 48.5)
+shape = SubResource("RectangleShape2D_8tonq")
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=174781040]
+script = ExtResource("1_3sbwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=983126839]
+position = Vector2(51.5, 44)
+shape = SubResource("RectangleShape2D_r4mjs")

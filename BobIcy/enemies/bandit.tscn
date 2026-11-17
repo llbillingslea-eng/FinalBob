@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://do2jqy4m8264f"]
+
+[ext_resource type="Script" uid="uid://bu7nsau3uqj6" path="res://enemies/bandit.gd" id="1_djos7"]
+[ext_resource type="Texture2D" uid="uid://bab1a2eptcv11" path="res://Idle/0_Reaper_Man_Idle_000.png" id="2_10ib8"]
+[ext_resource type="Resource" uid="uid://dbg2phelvk0qe" path="res://stats/bandit.tres" id="2_17xu3"]
+[ext_resource type="Script" uid="uid://dgvy6vschpl47" path="res://components/health_component.gd" id="3_txthf"]
+[ext_resource type="Script" uid="uid://iykntdwx67tf" path="res://components/hurtbox_component.gd" id="4_fll2r"]
+[ext_resource type="Script" uid="uid://s2jcr1411kwi" path="res://components/hitbox_component.gd" id="5_17xu3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bandit"]
+size = Vector2(28, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tonq"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4mjs"]
+size = Vector2(26, 26)
+
+[node name="Bandit" type="CharacterBody2D" unique_id=2137390447]
+collision_layer = 4
+script = ExtResource("1_djos7")
+stats = ExtResource("2_17xu3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1785244502]
+scale = Vector2(0.206, 0.152)
+texture = ExtResource("2_10ib8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1269377133]
+shape = SubResource("RectangleShape2D_bandit")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=750578245]
+script = ExtResource("3_txthf")
+metadata/_custom_type_script = "uid://dgvy6vschpl47"
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=595551060 node_paths=PackedStringArray("health")]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("4_fll2r")
+health = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://iykntdwx67tf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1719402816]
+shape = SubResource("RectangleShape2D_8tonq")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1909203170]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("5_17xu3")
+metadata/_custom_type_script = "uid://s2jcr1411kwi"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=975297814]
+shape = SubResource("RectangleShape2D_r4mjs")
