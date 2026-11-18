@@ -33,8 +33,8 @@ script = ExtResource("3_txthf")
 metadata/_custom_type_script = "uid://dgvy6vschpl47"
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=595551060 node_paths=PackedStringArray("health")]
-collision_layer = 16
-collision_mask = 0
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("4_fll2r")
 health = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://iykntdwx67tf"
@@ -43,8 +43,8 @@ metadata/_custom_type_script = "uid://iykntdwx67tf"
 shape = SubResource("RectangleShape2D_8tonq")
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1909203170]
-collision_layer = 0
-collision_mask = 8
+collision_layer = 16
+collision_mask = 2
 script = ExtResource("5_17xu3")
 metadata/_custom_type_script = "uid://s2jcr1411kwi"
 

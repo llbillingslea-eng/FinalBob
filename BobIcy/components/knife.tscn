@@ -5,8 +5,7 @@
 
 [sub_resource type="GDScript" id="GDScript_qnl7h"]
 script/source = "extends Area2D
-## A thrown marionberry. It flies straight until it leaves the screen or hits a wall.
-## Both cabinets throw this same scene.
+## A thrown Knife. It flies straight until it leaves the screen or hits a wall.
 
 @export var speed: float = 520.0
 
@@ -32,9 +31,11 @@ func _on_body_entered(_body: Node2D) -> void:
 
 [node name="Knife" type="Area2D" unique_id=1006539971]
 collision_layer = 0
+collision_mask = 0
 script = SubResource("GDScript_qnl7h")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=623073303]
+rotation = 0.7853982
 texture = ExtResource("2_8qd6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117489004]

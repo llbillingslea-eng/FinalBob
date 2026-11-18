@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://db6lof5u0xdf1" path="res://PNG/Platformer/Cartoon_Medieval_Training Arena_Level_Set_Platformer - Ground 11.png" id="1_thia8"]
 [ext_resource type="PackedScene" uid="uid://ctb8n71p3vtsn" path="res://bob.tscn" id="2_lolil"]
 [ext_resource type="Texture2D" uid="uid://cknnrtajmsh02" path="res://background 3/orig.png" id="3_1q0j8"]
+[ext_resource type="PackedScene" uid="uid://do2jqy4m8264f" path="res://enemies/bandit.tscn" id="4_n2bu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4na"]
 size = Vector2(1176, 120)
@@ -82,3 +83,6 @@ offset_top = 12.0
 offset_right = 1156.0
 offset_bottom = 664.0
 texture = ExtResource("3_1q0j8")
+
+[node name="Bandit" parent="." unique_id=2137390447 instance=ExtResource("4_n2bu5")]
+position = Vector2(774, 460)
