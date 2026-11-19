@@ -23,6 +23,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	queue_free()
+
+
+func _on_hitbox_component_landed() -> void:
+	pass # Replace with function body.
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_berry"]
@@ -43,8 +47,9 @@ shape = SubResource("CircleShape2D_berry")
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=523934498]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 8
 script = ExtResource("3_kbu1f")
+damage = 3
 metadata/_custom_type_script = "uid://s2jcr1411kwi"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=504291145]
